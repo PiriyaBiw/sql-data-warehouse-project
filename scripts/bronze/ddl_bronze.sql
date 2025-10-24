@@ -23,7 +23,7 @@ CREATE TABLE bronze.crm_cust_info(
     cst_lastname VARCHAR(50),
     cst_material_status VARCHAR(50),
     cst_gndr VARCHAR(50),
-    cst_crate_data DATE
+    cst_create_date DATE
 );
 
 DROP TABLE IF EXISTS bronze.crm_prd_info;
