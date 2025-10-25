@@ -1,3 +1,29 @@
+/*
+===============================================================================
+Script: Create Silver Layer Tables
+===============================================================================
+Script Purpose:
+    This script creates tables in the 'silver' schema as part of the structured 
+    data layer in the data warehouse. Each table stores cleaned and standardized 
+    data transformed from the bronze layer.
+
+Details:
+    - Drops existing silver tables if they already exist to ensure a clean setup.
+    - Creates six tables under the 'silver' schema:
+        1. crm_cust_info        → Customer information
+        2. crm_prd_info         → Product information
+        3. crm_sales_detials    → Sales transaction details
+        4. erp_cust_az12        → ERP customer master data
+        5. erp_loc_a101         → Location data
+        6. erp_px_cat_q1v2      → Product category data
+    - Each table includes a 'dwh_create_date' column with a default timestamp 
+      (NOW()) to record the data warehouse load time.
+
+Usage:
+    Run this script before loading transformed data into the silver layer.
+===============================================================================
+*/
+
 DROP TABLE IF EXISTS silver.crm_cust_info;
 CREATE TABLE silver.crm_cust_info(
     cst_id INT,
